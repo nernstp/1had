@@ -12,7 +12,7 @@ import Data.List
 -- >>> compress [1,1,1,1,1]
 -- [(1,5)]
 compress :: Eq a => [a] -> [(a, Int)]
-compress = ((,) . head <*> length) . group
+compress = map ((,) . head <*> length) . group
 
 -- | Expand a list with RLE
 --

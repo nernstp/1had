@@ -12,4 +12,4 @@ module HAD.Y2014.M02.D27.Exercise where
 -- Nothing
 --
 divIfMultiple :: Integral a => a -> [a] -> Maybe [a]
-divIfMultiple x = undefined
+divIfMultiple x = (\y ->  if y== map ((*x ). (`div` x)) y then Just $ map (`div` x) y else Nothing)

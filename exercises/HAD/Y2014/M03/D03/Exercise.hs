@@ -1,5 +1,6 @@
 module HAD.Y2014.M03.D03.Exercise where
-
+import Data.List
+import Control.Arrow
 -- | Sort a list of list of elements by the maximum of each list,
 -- in ascending order
 -- 
@@ -16,4 +17,5 @@ module HAD.Y2014.M03.D03.Exercise where
 -- should throw an execption: no max for empty list
 
 -- sortByMax :: Find the most generic signature
-sortByMax = undefined
+sortByMax :: [[Int]]->[[Int]]
+sortByMax = sortBy (((uncurry compare) .)  . (curry (maximum *** maximum)))

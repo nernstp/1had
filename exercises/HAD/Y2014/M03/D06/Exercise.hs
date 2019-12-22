@@ -1,5 +1,6 @@
 module HAD.Y2014.M03.D06.Exercise where
-
+import Control.Arrow
+import Data.List
 -- | takeStrictlyLessThan take elements of a list whils their sum is
 -- _strictly_ less than a given number
 --
@@ -18,4 +19,4 @@ module HAD.Y2014.M03.D06.Exercise where
 -- []
 --
 -- takeStrictlyLessThan :: Choose your poison
-takeStrictlyLessThan = undefined
+takeStrictlyLessThan = mapAccumL  (\x y -> ((y+x),y))
